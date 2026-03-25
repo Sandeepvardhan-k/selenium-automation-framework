@@ -8,7 +8,7 @@ class TestLogin:
     def setup_method(self):
         self.driver=webdriver.Chrome()
         self.driver.maximize_window()
-        self.wait=WebDriverWait(driver,10)
+        self.wait=WebDriverWait(self.driver,10)
     def teardown_method(self):
         self.driver.quit()
     def test_valid_login(self):
