@@ -3,3 +3,5 @@ __pycache__/
 selenium_env/
 *.png
 .vscode/
+reports/
+.pytest_cache/

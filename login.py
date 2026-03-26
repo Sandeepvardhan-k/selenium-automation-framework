@@ -8,7 +8,7 @@ class TestLogin:
 
     def setup_method(self):
         
-        driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()                  #to maximize window of website
         self.wait = WebDriverWait(self.driver, 10)     #this line tells webdriver to wait 0-10sec for an element
    
