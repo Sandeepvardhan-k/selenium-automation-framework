@@ -5,10 +5,13 @@ import pytest from
 class TestLogin:
 
     def setup_method(self):
-        
-        self.driver = webdriver.Chrome()
-        self.driver.maximize_window()                  #to maximize window of website
-        self.wait = WebDriverWait(self.driver, 10)     #this line tells webdriver to wait 0-10sec for an element
+        from selenium.webdriver.chrome.options import Options
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Chrome(options=options)
+        self.driver.maximize_window()
    
     def teardown_method(self):
         #runs after every test
