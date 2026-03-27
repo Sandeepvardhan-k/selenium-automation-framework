@@ -20,11 +20,11 @@ class TestLogin:
     def test_valid_login(self):
         #with valid credentials
         login=LoginPage(self.driver)
-        login.open
+        login.open()
         login.enter_username("tomsmith")
         login.enter_password("SuperSecretPassword!")
-        login.click_login
-        assert "you logged into a secure area" in login.get_success_message()
+        login.click_login()
+        assert "You logged into a secure area!" in login.get_success_message()
     def test_invalid_login(self):
         #with invalid credentials
         login = LoginPage(self.driver)
