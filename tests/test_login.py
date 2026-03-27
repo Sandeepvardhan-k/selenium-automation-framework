@@ -1,6 +1,6 @@
 from selenium import webdriver
 from pages.login_page import LoginPage
-import pytest from
+import pytest 
 
 class TestLogin:
 
