@@ -9,7 +9,7 @@ class FlipkartPage:
     SEARCH_BOX = (By.NAME, "q")
     CLOSE_LOGIN_POPUP = (By.CSS_SELECTOR, "button._2KpZ6l._2doB4z")
     SEARCH_RESULTS = (By.CSS_SELECTOR, "div[data-id]")
-
+    PRODUCT_PRICES = (By.XPATH, "//*[contains(text(),'₹')]")
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
@@ -19,23 +19,28 @@ class FlipkartPage:
 
     def close_login_popup(self):
         try:
-            close_btn = self.wait.until(
-                EC.element_to_be_clickable(self.CLOSE_LOGIN_POPUP))
+            close_btn = self.wait.until(EC.element_to_be_clickable(self.CLOSE_LOGIN_POPUP))
             close_btn.click()
         except:
             pass
 
     def search_product(self, product):
-        search = self.wait.until(
-            EC.presence_of_element_located(self.SEARCH_BOX))
+        search = self.wait.until(EC.presence_of_element_located(self.SEARCH_BOX))
         search.clear()
         search.send_keys(product)
         search.send_keys(Keys.ENTER)
 
     def get_results_count(self):
-        results = self.wait.until(
-            EC.presence_of_all_elements_located(self.SEARCH_RESULTS))
+        results = self.wait.until(EC.presence_of_all_elements_located(self.SEARCH_RESULTS))
         return len(results)
 
     def get_page_title(self):
         return self.driver.title
+    def get_first_product_price(self):
+        prices = self.wait.until(EC.presence_of_all_elements_located(self.PRODUCT_PRICES))
+        return prices[0].text
+    def get_current_url(self):
+        return self.driver.current_url
+    def get_search_box_value(self):
+        search = self.driver.find_element(*self.SEARCH_BOX)
+        return search.get_attribute("value")
