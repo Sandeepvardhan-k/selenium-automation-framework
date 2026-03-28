@@ -12,4 +12,4 @@ RUN apt-get update && apt-get install -y \
 
 COPY . .
 
-CMD ["pytest", "tests/test_login.py", "-v", "--html=reports/report.html"]
+CMD ["pytest", "tests/", "-v", "--html=reports/report.html"]
