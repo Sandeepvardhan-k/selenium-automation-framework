@@ -166,5 +166,5 @@ pytest-html
 
 **Sandeepvardhan K**
 - GitHub: [github.com/Sandeepvardhan-k](https://github.com/Sandeepvardhan-k)
-- LinkedIn:[ [linkedin.com/in/sandeepvardhan-k](https://linkedin.com/in/sandeepvardhan-k)]
+- LinkedIn:[https://linkedin.com/in/sandeep-vardhan-421b97339](https://www.linkedin.com/in/sandeep-vardhan-421b97339/)
 - Email: sandeepvardhan9381@gmail.com
